@@ -29,12 +29,10 @@ type Configuration struct {
 	Database DatabaseConfig
 }
 
-var (
-	cwd,_ = os.Getwd()
-)
+var cwd,_ = os.Getwd()
 
-func Get(configObject interface{}, configFile string) Configuration {
-	if (configObject != interface{}) {
+func Get(configObject interface{}, configFilePath string) interface{} {
+	if (configObject != nil) {
 		fmt.Print("\n\nCONFIG ALREADY SET!!! %+v",configObject)
 		return configObject
 	}
