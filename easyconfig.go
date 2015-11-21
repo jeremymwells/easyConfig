@@ -1,4 +1,4 @@
-package config
+package easyConfig
 
 import (
 	"encoding/json"
