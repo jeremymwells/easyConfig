@@ -10,11 +10,7 @@ import (
 var cwd,_ = os.Getwd()
 
 func New(configObject interface{}, configFilePath string) interface{} {
-	if (configObject != nil) {
-		fmt.Print("\n\nCONFIG ALREADY SET!!! %+v",configObject)
-		return configObject
-	}
-	
+
 	fmt.Print("reading config file")
 	
 	file, err := ioutil.ReadFile(cwd + configFilePath)
