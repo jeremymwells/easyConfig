@@ -11,9 +11,9 @@ var cwd,_ = os.Getwd()
 
 func New(configObject interface{}, configFilePath string) interface{} {
 
-	fmt.Print("reading config file")
+	fmt.Print("reading config file: %s", configFilePath)
 	
-	file, err := ioutil.ReadFile(cwd + configFilePath)
+	file, err := ioutil.ReadFile(fmt.Sprintf("%s/%s", cwd, configFilePath))
 	
 	if err != nil {
 		fmt.Print("\n\nerror opening config file: %v", err)
