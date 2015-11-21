@@ -7,31 +7,9 @@ import (
 	"io/ioutil"	
 )
 
-type DatabaseUser struct {
-	Name string
-	Password string
-}
-
-type DatabaseDefinition struct {
-	Name string
-	Protocol string
-	Address string
-}
-
-type DatabaseConfig struct {
-	ReadUser DatabaseUser
-	WriteUser DatabaseUser
-	Dev DatabaseDefinition
-	Prod DatabaseDefinition
-}
-
-type Configuration struct {
-	Database DatabaseConfig
-}
-
 var cwd,_ = os.Getwd()
 
-func Get(configObject interface{}, configFilePath string) interface{} {
+func New(configObject interface{}, configFilePath string) interface{} {
 	if (configObject != nil) {
 		fmt.Print("\n\nCONFIG ALREADY SET!!! %+v",configObject)
 		return configObject
